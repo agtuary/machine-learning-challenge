@@ -37,8 +37,19 @@ Note: Use the `Pillow` (`pip install Pillow`) library to handle loading/saving o
 
 Explain your approach inside your code (write it as a comment block or notebook cell). Some of the following questions are good places to start:
 
-How would you improve the model? Are there any specific areas in the satellite imagery where you see the model not performing as well as other areas? Are there farm paddocks where there is a lot of noise in the output (e.g. lots of mixed crop type pixels). Are there any other features you could use as inputs? Could you use the different band values to engineer new features/inputs (such as the difference between particular bands)? What machine learning model or type would best suit this problem? How would you ensure the training data is high quality and only includes pixels over valid crop land?
+How would you improve the model?
+- Are there any specific areas in the satellite imagery where you see the model not performing as well as other areas? 
+- Are there farm paddocks where there is a lot of noise in the output (e.g. lots of mixed crop type pixels)? 
+- Are there any other features you could use as inputs? 
+- Could you use the different band values to engineer new features/inputs (such as the difference between particular bands)? 
+- What machine learning model or type would best suit this problem? 
+- How would you ensure the training data is high quality and only includes pixels over valid crop land?
 
+Additionally
+ - Did you change the model hyperparameters? If so, which ones and why? 
+ - What are the downsides to your approach? 
+ - What other methods could you choose? Why would that be the next best choice?
+ - Put in in references to scientific papers, websites or blogs that you used to inform your choices.
 
 ## Submission
 
