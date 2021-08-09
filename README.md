@@ -13,6 +13,8 @@ Sentinel-2 is a satellite that captures 12 different wavelengths of light (also 
 
 ## The Task
 
+Note: Use the `Pillow` (`pip install Pillow`) library to handle loading/saving of image files.
+
 1. Download the dataset at: https://agtuary-data-public.s3.ap-southeast-2.amazonaws.com/machine-learning-challenge/agtuary-ml.gz
 
 2. Prepare the data for training and testing. The `pixels.csv` file has 14 columns, and each row is a different pixel from satellite imagery. The first 12 columns are the different bands `B01..B12`, then the `cloud_prob` column which is the probability that the pixel of satellite imagery is cloud (ranges from `0. to 100.`), and finally the `label` column which is the ground-truth crop type.
@@ -23,9 +25,9 @@ Sentinel-2 is a satellite that captures 12 different wavelengths of light (also 
 
 4. Create/use a machine learning model of your choice to perform multiclass classification, and train it on the band values you just prepared.
 
-5. Inside the dataset, there are also satellite imagery band files from a test region in Australia (`B01.tif to B12.tif`). These image files are in `uint16` data type and have values that go from `0 to 10000`, which must be rescaled to fit the training data range. There is also a cropland mask file (`mask.png`), which is `int8` data type and the values go from `0 to 255`. A value greater than `0` represents pixels of the band files where you will use your model and perform inference on the band values.
+5. Plot a confusion matrix and print a classification report of your model. Plot/print any other interesting metrics you may have (optional).
 
-6. Plot a confusion matrix and print a classification report of your model. Plot/print any other interesting metrics you may have (optional).
+6. Inside the dataset, there are also satellite imagery band files from a test region in Australia (`B01.tif to B12.tif`). These image files are in `uint16` data type and have values that go from `0 to 10000`, which must be rescaled to fit the training data range. There is also a cropland mask file (`mask.png`), which is `int8` data type and the values go from `0 to 255`. Use your model to perform inference over this test region, where a value greater than `0` in the mask represents the only pixels where inference should be performed.
 
 7. From your inference results, create an image which contains purple pixels where the result was `Other`, red pixels where the result was `Sorghum` and white pixels where the result was `Cotton`. Save it as a PNG file.
 
@@ -35,7 +37,7 @@ Sentinel-2 is a satellite that captures 12 different wavelengths of light (also 
 
 Explain your approach inside your code (write it as a comment block or notebook cell). Some of the following questions are good places to start:
 
-How would you improve the model? Are there any specific areas in the satellite imagery where you see the model not performing as well as other areas? Are there farm paddocks where there is a lot of noise in the output (e.g. lots of mixed crop type pixels). Are there any other features you could use as inputs? Could you use the different band values to engineer new features/inputs (such as the difference between particular bands)? What machine learning model or type would best suit this problem?
+How would you improve the model? Are there any specific areas in the satellite imagery where you see the model not performing as well as other areas? Are there farm paddocks where there is a lot of noise in the output (e.g. lots of mixed crop type pixels). Are there any other features you could use as inputs? Could you use the different band values to engineer new features/inputs (such as the difference between particular bands)? What machine learning model or type would best suit this problem? How would you ensure the training data is high quality and only includes pixels over valid crop land?
 
 
 ## Submission
