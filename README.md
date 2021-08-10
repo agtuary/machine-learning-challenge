@@ -13,7 +13,7 @@ Sentinel-2 is a satellite that captures 12 different wavelengths of light (also 
 
 ## The Task
 
-Note: Use the `Pillow` (`pip install Pillow`) library to handle loading/saving of image files.
+Note: Use the `Agtuary ML Challenge template` notebook provided in this repo to start.
 
 1. Download the dataset at: https://agtuary-data-public.s3.ap-southeast-2.amazonaws.com/machine-learning-challenge/agtuary-ml.gz
 
