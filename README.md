@@ -15,7 +15,7 @@ Sentinel-2 is a satellite that captures 12 different wavelengths of light (also 
 
 Note: Use the `Agtuary ML Challenge template` notebook provided in this repo to start.
 
-1. Download the dataset at: https://agtuary-data-public.s3.ap-southeast-2.amazonaws.com/machine-learning-challenge/agtuary-ml.gz
+1. Download the dataset at: https://agtuary-data-public.s3.ap-southeast-2.amazonaws.com/machine-learning-challenge/agtuary-ml.tar.gz
 
 2. Prepare the data for training and testing. The `pixels.csv` file has 14 columns, and each row is a different pixel from satellite imagery. The first 12 columns are the different bands `B01..B12`, then the `cloud_prob` column which is the probability that the pixel of satellite imagery is cloud (ranges from `0. to 100.`), and finally the `label` column which is the ground-truth crop type.
 
