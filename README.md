@@ -19,21 +19,24 @@ Note: Use the `Agtuary ML Challenge template` notebook provided in this repo to 
 
 2. Prepare the data for training and testing. The `pixels.csv` file has 14 columns, and each row is a different pixel from satellite imagery. The first 12 columns are the different bands `B01..B12`, then the `cloud_prob` column which is the probability that the pixel of satellite imagery is cloud (ranges from `0. to 100.`), and finally the `label` column which is the ground-truth crop type.
 
-    The band values go from `0. to 1.` Remove any pixels that have a cloud probability of over 2. Split the dataset into a train and test set as you feel is appropriate. Encode the crop type labels into a numeric value.
+    The band values go from `0. to 1.` Remove any pixels that have a cloud probability of over 2. Split the dataset into a train and test set as you feel is appropriate. Encode the crop type labels into a numeric value. Drop `B04` from the dataset and it must not be used in any calculations. You may use [Satellite indices](https://www.indexdatabase.de/) to augment the data. Any form of augmentation/calculated feature generation can be used.
 
 3. Create a plot showing the mean band values of each crop type, as well as +- 2 standard deviations.
 
-4. Create/use a machine learning model of your choice to perform multiclass classification, and train it on the band values you just prepared.
+4. Justify the usage of features that went into training the model backed by statistical evidence.
 
-5. Plot a confusion matrix and print a classification report of your model. Plot/print any other interesting metrics you may have (optional).
+5. Create/use a machine learning model of your choice to perform multiclass classification, and train it on the any features/bands/indices deemed necessary.
 
-6. Inside the dataset, there are also satellite imagery band files from a test region in Australia (`B01.tif to B12.tif`). These image files are in `uint16` data type and have values that go from `0 to 10000`, which must be rescaled to fit the training data range. There is also a cropland mask file (`mask.png`), which is `int8` data type and the values go from `0 to 255`. Use your model to perform inference over this test region, where a value greater than `0` in the mask represents the only pixels where inference should be performed.
+6. Plot a confusion matrix and print a classification report of your model. Plot/print any other interesting metrics you may have (optional).
 
-7. From your inference results, create an image which contains purple pixels where the result was `Other`, red pixels where the result was `Sorghum` and white pixels where the result was `Cotton`. Save it as a PNG file.
+7. Inside the dataset, there are also satellite imagery band files from a test region in Australia (`B01.tif to B12.tif`). These image files are in `uint16` data type and have values that go from `0 to 10000`, which must be rescaled to fit the training data range. There is also a cropland mask file (`mask.png`), which is `int8` data type and the values go from `0 to 255`. Use your model to perform inference over this test region, where a value greater than `0` in the mask represents the only pixels where inference should be performed.
 
+8. From your inference results, create an image which contains purple pixels where the result was `Other`, red pixels where the result was `Sorghum` and white pixels where the result was `Cotton`. Save it as a PNG file.
+
+### Restrictions
+- The usage of `B04` is not allowed.
 
 ## Evaluation
-
 
 Explain your approach inside your code (write it as a comment block or notebook cell). Some of the following questions are good places to start:
 
